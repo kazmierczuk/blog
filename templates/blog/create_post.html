@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% block pojemnik %}
+  <div class="container">
+    <div class="jumbotron">
+      <form method="post">
+        {{ my_form.as_p }}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="submit">
+      </form>
+    </div>
+  </div>
+{% endblock %}
