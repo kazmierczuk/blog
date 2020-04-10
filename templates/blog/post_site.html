@@ -7,5 +7,12 @@
       <p>{{ post.text }}</p>
       <p><i>{{ post.author }}</i></p>
     </div>
+    <h2>Comments: </h2>
+    {% for coms in  post.comments.all %}
+      <div class="jumbotron">
+        <p>{{ coms.text }}</p>
+        <p><i>{{ coms.author }}</i></p>
+      </div>
+    {% endfor %}
   </div>
 {% endblock %}

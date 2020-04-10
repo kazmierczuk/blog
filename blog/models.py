@@ -16,7 +16,7 @@ class Comment(models.Model):
     #very much self-explanatory variable names
     author = models.CharField(max_length=16)
     text = models.TextField()
-    post_id = models.ForeignKey(Post, on_delete=models.CASCADE) #to which post is the comment
+    post_id = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments') #to which post is the comment
 
     #string representation of class object
     def __str__(self):
