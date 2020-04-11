@@ -7,6 +7,7 @@
       <p>{{ post.text }}</p>
       <p><i>{{ post.author }}</i></p>
     </div>
+
     <h2>Comments: </h2>
     {% for coms in  post.comments.all %}
       <div class="jumbotron">
@@ -14,5 +15,10 @@
         <p><i>{{ coms.author }}</i></p>
       </div>
     {% endfor %}
+
+    <a class = 'btn btn-primary' href="{% url 'blog:update' pk=post.pk %}">Update</a>
+    <a href="{% url 'blog:delete' pk=post.pk %}">Delete</a>
+
+
   </div>
 {% endblock %}

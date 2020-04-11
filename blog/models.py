@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Class of posts in the blog
 class Post(models.Model):
@@ -10,6 +11,9 @@ class Post(models.Model):
     #string representation of class object
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog:read_post',kwargs={'pk':self.pk})
 
 # Comments, anyone can add. No veification
 class Comment(models.Model):

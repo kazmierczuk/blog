@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{%block pojemnik%}
+<h1>Delete {{post.name}}?</h1>
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" value="DELETE">
+  <a href="{% url 'blog:read_post' pk=post.pk %}">Cancel</a>
+</form>
+{%endblock%}

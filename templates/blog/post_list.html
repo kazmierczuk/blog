@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{%block pojemnik%}
+<h1>List:</h1>
+<ol>
+  {% for entry in posts %}
+    <h2><li><a href="{{ entry.id }}">{{ entry.title }}</a></li></h2>
+  {% endfor %}
+</ol>
+{%endblock%}

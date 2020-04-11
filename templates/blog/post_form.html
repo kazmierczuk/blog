@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{%block pojemnik%}
+<h1>
+  {% if not form.instance.pk %}
+  Create Post
+  {% else %}
+  Update Post
+  {% endif %}
+</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit">
+</form>
+
+{% endblock %}
